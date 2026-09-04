@@ -1,0 +1,80 @@
+generated: '2026-09-04'
+method: probed
+source: >-
+  Direct HTTPS probes of the RFC 8615 well-known paths on every host this record knows,
+  run 2026-09-04.
+note: >-
+  NOTHING WAS FOUND. Every well-known path returned HTTP 404 on every reachable Vivrelle
+  host, so this file records a verified ABSENCE and NO WellKnown / SecurityTxt / AgentCard
+  pointer is wired into apis.yml. The 404s are genuine Next.js error responses carrying a
+  404 status (not a soft-200 SPA shell). images.vivrelle.com did not complete a TLS
+  connection from the probe host and is recorded as status 0 rather than as a miss.
+hosts:
+- host: www.vivrelle.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+  - path: /.well-known/aauth-resource.json
+    status: 404
+- host: vivrelle.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+  - path: /.well-known/aauth-resource.json
+    status: 404
+- host: shop.vivrelle.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+  - path: /.well-known/aauth-resource.json
+    status: 404
+- host: images.vivrelle.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 0
+    note: TLS connection could not be established from the probe host.
+  - path: /.well-known/agent-card.json
+    status: 0
+    note: TLS connection could not be established from the probe host.

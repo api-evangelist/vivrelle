@@ -1,0 +1,51 @@
+generated: '2026-09-04'
+method: probed
+source: >-
+  DNS and HTTPS probes of vivrelle.com and its subdomains, plus a read of the published
+  membership terms, run 2026-09-04.
+note: >-
+  Vivrelle publishes no API, so there is no API versioning scheme, no deprecation policy
+  and no Sunset/Deprecation (RFC 8594) header surface to record. The one lifecycle-adjacent
+  finding is a status subdomain that is configured in DNS but does not serve. NO StatusPage
+  and NO Deprecation pointer is wired into apis.yml, because neither surface is actually
+  reachable.
+api_versioning:
+  scheme: none
+  detail: No public API exists, so no versioning scheme is published.
+deprecation_policy:
+  published: false
+  sunset_header: false
+  detail: >-
+    No API deprecation policy, Sunset header or Deprecation header surface is published.
+status_page:
+  published: false
+  serving: false
+  host: status.vivrelle.com
+  dns:
+    cname: status.ssl.ohdear.app.
+    resolves_to: 68.183.43.169
+  evidence:
+  - url: http://status.vivrelle.com/
+    status: 302
+    note: Redirects to HTTPS.
+  - url: https://status.vivrelle.com/
+    status: 0
+    note: >-
+      TLS handshake fails with a fatal "internal error" alert (SSL alert 80). No
+      certificate is presented for this hostname, so the page cannot be loaded by any
+      client.
+  detail: >-
+    status.vivrelle.com is delegated by CNAME to the Oh Dear hosted status-page service and
+    the HTTP listener answers with a 302 to HTTPS, but the HTTPS endpoint terminates the
+    handshake with a fatal internal-error alert — no certificate has been provisioned for
+    the hostname. The status page is therefore CONFIGURED BUT NOT SERVING, and is
+    unreachable for members and machines alike. This is a provider-side misconfiguration
+    that Vivrelle could fix by completing certificate provisioning in Oh Dear.
+service_terms:
+  source: https://www.vivrelle.com/faqs
+  minimum_commitment_months: 3
+  minimum_item_hold_days: 30
+  cancellation: >-
+    Members may cancel at any time after the first three months, once the borrowed item has
+    been returned and received by Vivrelle.
+  freeze: Membership may be frozen at any point for $10/month and reactivated immediately.

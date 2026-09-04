@@ -1,17 +1,37 @@
 aid: vivrelle
 name: Vivrelle
-description: 'Vivrelle is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: 'Vivrelle is a New York City based members-only club, founded in 2018, that
+  lends luxury accessories — designer handbags, fine and designer jewelry, watches and
+  diamonds from houses including Chanel, Hermès, Louis Vuitton, Gucci, Dior and Van Cleef
+  & Arpels — to members for a recurring monthly fee rather than selling them. Membership
+  is sold in published consumer tiers (Classique, Couture, Classique+, Couture+, plus the
+  Premier and invite-only Réservé add-ons), and the product reaches members through
+  vivrelle.com and a first-party iOS/Android app that includes "Ella AI", an AI styling
+  tool built with Revolve and FWRD. Vivrelle is a direct-to-consumer subscription retail
+  business, not a software vendor: it publishes no developer portal, no API documentation,
+  no OpenAPI/GraphQL/AsyncAPI contract, no SDK in any public package registry, and no
+  webhook or MCP surface. Its GitHub organization exists but carries zero public
+  repositories, and its application backend is private to its own web and mobile clients.'
+image: https://www.vivrelle.com/opengraph-image.jpg
 url: https://raw.githubusercontent.com/api-evangelist/vivrelle/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
 x-tier: stub
 x-tier-reason: harvest
-specificationVersion: '0.20'
+specificationVersion: '0.23'
 created: '2026-09-04'
 modified: '2026-09-04'
 tags:
 - Company
+- Fashion
+- Luxury
+- Retail
+- Ecommerce
+- Subscription
+- Membership
+- Rental
+- Jewelry
+- Accessories
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -20,4 +40,58 @@ maintainers:
   email: info@apis.io
 common:
 - type: Website
-  url: https://www.nasdaqprivatemarket.com/
+  url: https://www.vivrelle.com/
+- type: Pricing
+  url: https://www.vivrelle.com/join-the-club
+- type: SignUp
+  url: https://www.vivrelle.com/apply/account
+- type: Login
+  url: https://www.vivrelle.com/login
+- type: TermsOfService
+  url: https://www.vivrelle.com/terms
+- type: PrivacyPolicy
+  url: https://www.vivrelle.com/privacy-policy
+- type: Support
+  url: https://www.vivrelle.com/contact-us
+- type: Plans
+  url: plans/vivrelle-plans-pricing.yml
+- type: DomainSecurity
+  url: security/vivrelle-domain-security.yml
+- type: LLMsTxt
+  url: llms/vivrelle-llms.txt
+x-enrichment:
+  date: '2026-09-04'
+  status: minimal
+  artifacts_added: 7
+  pass: local-v3
+x-coverage:
+  state: none
+  reason: no-developer-program
+  detail: >-
+    Vivrelle is a direct-to-consumer luxury-accessory rental membership club that clearly
+    builds software — a Next.js storefront, an iOS/Android app, and the "Ella AI" styling
+    tool built with Revolve and FWRD — but ships all of it strictly as an end-user product:
+    api.vivrelle.com does not resolve at all, every contract path on www.vivrelle.com
+    (/openapi.json, /swagger.json, /graphql, /api-docs, /developers, /llms.txt) returns a
+    genuine Next.js 404, all nine well-known paths 404 on every reachable host, no
+    first-party package exists on npm, PyPI, RubyGems or crates.io, and the company's own
+    GitHub organization has zero public repositories, so the only backend is the private
+    Next.js /api namespace that robots.txt disallows and that serves Vivrelle's own clients.
+  evidence:
+  - url: https://www.vivrelle.com/openapi.json
+    status: 404
+  - url: https://www.vivrelle.com/graphql
+    status: 404
+  - url: https://www.vivrelle.com/developers
+    status: 404
+  - url: https://www.vivrelle.com/llms.txt
+    status: 404
+  - url: https://www.vivrelle.com/.well-known/agent-card.json
+    status: 404
+  - url: https://www.vivrelle.com/robots.txt
+    status: 200
+  - url: https://github.com/Vivrelle
+    status: 200
+  - url: https://www.vivrelle.com/faqs
+    status: 200
+  checked: '2026-09-04'

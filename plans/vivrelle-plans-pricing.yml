@@ -1,0 +1,88 @@
+generated: '2026-09-04'
+method: searched
+source: https://www.vivrelle.com/faqs
+note: >-
+  These are CONSUMER MEMBERSHIP plans, not API plans. Vivrelle publishes no API and
+  therefore no API pricing. Every price below is quoted verbatim from the served HTML of
+  the Vivrelle FAQ (https://www.vivrelle.com/faqs, HTTP 200) on 2026-09-04. The
+  /join-the-club page names the tiers and states "Plans starting at $45 a month" but does
+  not itself list per-tier pricing; the FAQ does, so the FAQ is the cited source.
+docs: https://www.vivrelle.com/join-the-club
+currency: USD
+billing_period: monthly
+plan_count: 6
+plans:
+- name: Classique
+  kind: membership
+  price: 139
+  currency: USD
+  period: month
+  price_note: '$139/month + tax'
+  included: Borrow one (1) item at a time from the Classique closet.
+  limits:
+    items_at_a_time: 1
+    item_retail_value_cap_usd: 4000
+- name: Couture
+  kind: membership
+  price: 239
+  currency: USD
+  period: month
+  price_note: '$239/month + tax'
+  included: >-
+    Borrow one (1) item at a time with full closet access, including limited edition
+    pieces.
+  limits:
+    items_at_a_time: 1
+- name: Classique+
+  kind: membership
+  price: 249
+  currency: USD
+  period: month
+  price_note: '$249/month + tax'
+  included: Borrow two (2) items at a time from the Classique closet.
+  limits:
+    items_at_a_time: 2
+- name: Couture+
+  kind: membership
+  price: 339
+  currency: USD
+  period: month
+  price_note: '$339/month + tax'
+  included: >-
+    Borrow two (2) items at a time with access to both the Couture and Classique closets.
+  limits:
+    items_at_a_time: 2
+- name: Premier
+  kind: add-on
+  price: 49
+  currency: USD
+  period: month
+  included: >-
+    Add-on to any existing membership. Borrow one (1) additional item per month from a
+    collection of jewelry valued up to $1,000 retail, plus select handbags.
+  limits:
+    additional_items_per_month: 1
+    item_retail_value_cap_usd: 1000
+  requires: an active Vivrelle membership
+- name: Réservé
+  kind: add-on
+  price: 800
+  currency: USD
+  period: month
+  availability: invite-only
+  included: >-
+    Invite-only add-on tier giving access to a separate closet of ultra high-end luxury
+    accessories, including Hermès Birkin and Kelly bags, Van Cleef & Arpels and the
+    Bvlgari Serpenti collection.
+  requires: an active Vivrelle membership
+terms:
+  minimum_commitment: >-
+    Membership may be cancelled at any time after the first three months, provided the
+    borrowed item has been returned and received by Vivrelle.
+  minimum_hold_period_days: 30
+  freeze:
+    available: true
+    price: 10
+    currency: USD
+    period: month
+    note: Membership may be frozen at any point for $10/month and reactivated immediately.

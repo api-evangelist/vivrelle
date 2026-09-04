@@ -1,0 +1,25 @@
+generated: '2026-09-04'
+method: searched
+source: >-
+  Full public-surface review of vivrelle.com run 2026-09-04 (site pages, sitemap, FAQ,
+  robots.txt and well-known probes).
+note: >-
+  HONEST ZERO. Vivrelle publishes no public API, so there is no documented rate limit, no
+  RateLimit-*/X-RateLimit-* response header contract and no documented 429 behaviour to
+  record. NO RateLimits pointer is wired into apis.yml: emitting one would credit an
+  agent-facing runtime signal for a company that exposes no callable surface at all. This
+  file exists to record that the question was asked and answered, not to claim a limit.
+limit_count: 0
+limits: []
+headers: []
+exhaustion_status_code: null
+robots:
+  url: https://www.vivrelle.com/robots.txt
+  status: 200
+  disallow:
+  - /api
+  - /*?query
+  detail: >-
+    robots.txt disallows /api. That path is the private Next.js route namespace backing
+    Vivrelle's own web client, not a published API, and it was not crawled — the directive
+    is honored.

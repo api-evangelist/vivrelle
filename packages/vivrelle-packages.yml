@@ -1,0 +1,47 @@
+generated: '2026-09-04'
+method: searched
+source: >-
+  Package-registry searches run 2026-09-04 against npm, PyPI, RubyGems and crates.io, plus
+  a GitHub user/org and repository search.
+note: >-
+  NO FIRST-PARTY PACKAGE OF ANY KIND EXISTS. Vivrelle publishes no SDK or client library
+  in any public registry, so no SDKs or Packages pointer is wired into apis.yml. This file
+  records the searches that were actually run and what each returned, so a later pass does
+  not repeat them.
+package_count: 0
+packages: []
+registries_checked:
+- registry: npm
+  query: https://registry.npmjs.org/-/v1/search?text=vivrelle
+  status: 200
+  results: 0
+- registry: pypi
+  query: https://pypi.org/pypi/vivrelle/json
+  status: 404
+  results: 0
+- registry: rubygems
+  query: https://rubygems.org/api/v1/gems/vivrelle.json
+  status: 404
+  results: 0
+- registry: crates.io
+  query: https://crates.io/api/v1/crates?q=vivrelle
+  status: 200
+  results: 0
+source_code:
+  github_org: https://github.com/Vivrelle
+  github_org_status: 200
+  public_repos: 0
+  note: >-
+    A GitHub organization named Vivrelle exists (id 115492703, created 2022-10-10) and the
+    page returns HTTP 200, but it carries ZERO public repositories. Because it publishes no
+    public code, no GitHubOrganization pointer is wired into apis.yml — the organization is
+    present, the public code surface it would signal is not. The three public repositories
+    matching "vivrelle" on GitHub search all belong to individuals (a candidate take-home
+    exercise and two personal projects), not to the company.
+distribution:
+  ios_app: https://apps.apple.com/us/app/vivrelle/id1542044957
+  ios_app_status: 200
+  note: >-
+    Vivrelle ships a consumer iOS/Android application. That app is an end-user product
+    distributed through the app stores, not a developer SDK, and its backend is private to
+    the app. It is recorded here for completeness only.
